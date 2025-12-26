@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desa Nagrak - Teras Desa</title>
-    
+
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <div class="header">
         <div class="container">
             <div class="logo">
                 🏠 Teras Desa
+            </div>
+            <div class="user-area">
+                <span class="username">👤 {{ session('user_name') }}</span>
+                <form action="{{ url('/logout') }}" method="POST">
+                    @csrf
+                    <button class="btn-logout">Logout</button>
+                </form>
             </div>
             <div class="nav">
                 <ul>
@@ -32,7 +41,8 @@
         <div class="container">
             <div class="bagianAtas-text">
                 <h1>Selamat Datang di Teras Desa</h1>
-                <p>Platform digital untuk Desa Nagrak. Jual produk lokal, kelola aset desa bersama, dan pantau pembangunan komunitas kami dengan mudah dan transparan.</p>
+                <p>Platform digital untuk Desa Nagrak. Jual produk lokal, kelola aset desa bersama, dan pantau
+                    pembangunan komunitas kami dengan mudah dan transparan.</p>
                 <a href="{{ url('/login') }}" class="btn btn-orange">Mulai Berjualan &rarr;</a>
                 <a href="{{ url('/pembangunan') }}" class="btn btn-green-outline">Lihat Pembangunan</a>
             </div>
@@ -43,7 +53,7 @@
                     <a href="{{ url('/aset') }}" class="btn btn-white">📊 Data Aset</a>
                 </div>
             </div>
-            
+
             <div class="clearfix"></div>
         </div>
     </div>
@@ -62,14 +72,14 @@
                     <p>Jual produk lokal terbaik langsung dari hasil tani dan UMKM Desa Nagrak...</p>
                     <a href="{{ url('/marketplace') }}" class="card-link">Jelajahi Marketplace &rarr;</a>
                 </div>
-                
+
                 <div class="feature-box">
                     <div class="card-icon">🏦</div>
                     <h3>Aset Desa Nagrak</h3>
                     <p>Kelola dan pantau semua aset Desa Nagrak dengan transparan. Dari tanah, bangunan...</p>
                     <a href="{{ url('/aset') }}" class="card-link">Lihat Aset Desa &rarr;</a>
                 </div>
-                
+
                 <div class="feature-box">
                     <div class="card-icon">🛠️</div>
                     <h3>Pembangunan Nagrak</h3>
@@ -111,7 +121,8 @@
             <a href="{{ url('/login') }}" class="btn btn-orange">Mulai Sekarang &rarr;</a>
         </div>
     </div>
-    
+
     <script src="{{ asset('js/homepage.js') }}"></script>
 </body>
+
 </html>
