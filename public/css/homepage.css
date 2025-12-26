@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    color: #333333; 
+    color: #333333;
 }
 
 * { box-sizing: border-box; }
@@ -13,6 +13,37 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
+}
+
+.user-area {
+    float: right;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+
+.username {
+    font-weight: 600;
+    color: #000000;
+}
+
+.logout-form {
+    margin: 0;
+}
+
+.btn-logout {
+    background: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-logout:hover {
+    background: #e63c3c;
 }
 
 .clearfix { clear: both; }
