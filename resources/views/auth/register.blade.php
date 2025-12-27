@@ -13,6 +13,17 @@
     <div class="card shadow p-4" style="max-width:380px;width:100%;border-radius:20px;">
         <h3 class="text-center fw-bold mb-4">Sign Up</h3>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul class="mb-0 ps-3">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+
         <form method="POST" action="/register">
             @csrf
             <div class="mb-3">
