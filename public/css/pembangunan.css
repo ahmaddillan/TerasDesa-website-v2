@@ -1,0 +1,81 @@
+.pembangunan-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:16px;
+  margin-top:16px;
+}
+
+.grid-two{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+}
+
+.full{ grid-column: 1 / -1; }
+
+textarea{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  outline:none;
+  font-size:15px;
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* tombol secondary tetap selaras dengan tema */
+.btn.secondary{
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.2);
+  color:#2d2d2d;
+}
+
+/* list */
+.list{ margin-top:12px; }
+.item{
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:10px;
+  padding:12px;
+  margin-bottom:10px;
+}
+.item .meta{ font-size:12px; opacity:.75; margin-top:6px; }
+
+/* progress bar */
+.progress{
+  width:100%;
+  height:8px;
+  background:#e5e7eb;
+  border-radius:999px;
+  overflow:hidden;
+}
+.progress #bar{
+  height:100%;
+  background:#556B2F;
+  width:0%;
+  transition: width .25s ease;
+}
+.percent-text{
+  font-size:12px;
+  color:#666;
+  margin-top:6px;
+}
+
+.row-between{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.row-gap{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+@media (max-width: 920px){
+  .pembangunan-grid{ grid-template-columns: 1fr; }
+  .grid-two{ grid-template-columns: 1fr; }
+}
