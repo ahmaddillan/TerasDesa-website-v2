@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\CartController;
 
 // 1. Rute LOGIN & REGISTER
 Route::get('/login', [AuthController::class, 'form']);
@@ -38,6 +39,7 @@ Route::middleware('auth.session')->group(function () {
     Route::get('/pembangunan', fn() => "Halaman Pembangunan");
 });
 
+
 //5. Rute ASET
 Route::get('/aset/{id}/edit', function () {
     return view('assets.edit');
@@ -46,4 +48,17 @@ Route::get('/aset/create', function () {
     return view('assets.create');
 });
 
+// 5. Rute CART
+Route::get('/cart', function () {
+    return view('index');
+});
 
+// 6. Rute CHECKOUT
+Route::get('/checkout', function () {
+    return view('checkout');
+});
+
+// 7. Rute TRANSAKSI
+Route::get('/transaksi', function () {
+    return view('transaksi');
+});

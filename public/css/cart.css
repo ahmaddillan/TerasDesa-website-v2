@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f5f6f8;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    color: #03ac0e;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.search {
+    margin: 0 20px;
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.profile {
+    font-size: 14px;
+}
+
+/* CONTENT */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+/* LEFT */
+.cart-left {
+    width: 65%;
+}
+
+.cart-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.select-all {
+    font-weight: 500;
+}
+
+.store {
+    margin-top: 15px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.product img {
+    width: 80px;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.title {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.product-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* DISABLED */
+.disabled {
+    opacity: 0.6;
+}
+
+.muted {
+    color: #888;
+}
+
+/* RIGHT */
+.cart-right {
+    width: 35%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.promo {
+    background: #e6f7f1;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    width: 100%;
+    padding: 12px;
+    background: #03ac0e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}

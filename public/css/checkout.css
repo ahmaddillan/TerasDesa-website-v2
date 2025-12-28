@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f5f6f8;
+}
+
+/* HEADER */
+.header {
+    background: #fff;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    color: #2f6f3e;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+.left {
+    width: 65%;
+}
+
+.right {
+    width: 35%;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin-bottom: 10px;
+}
+
+/* TEXT */
+.text-muted {
+    color: #777;
+    font-size: 14px;
+}
+
+/* PRODUCT */
+.product {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.product img {
+    width: 80px;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.title {
+    font-weight: 500;
+}
+
+.price {
+    font-weight: bold;
+}
+
+/* SHIPPING */
+.shipping {
+    background: #f7f7f7;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* INPUT */
+textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+/* RADIO */
+.radio {
+    display: block;
+    margin: 10px 0;
+}
+
+/* PROMO */
+.promo {
+    margin-top: 15px;
+    background: #e6f7f1;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* RINGKASAN */
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+.total {
+    font-weight: bold;
+}
+
+/* BUTTON */
+.btn-link {
+    background: none;
+    border: none;
+    color: #03ac0e;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.btn-pay {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: #03ac0e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
