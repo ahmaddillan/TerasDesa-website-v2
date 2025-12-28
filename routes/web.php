@@ -31,6 +31,19 @@ Route::middleware('auth.session')->group(function () {
         return view('homepage');
     });
 
-    Route::get('/aset', fn() => "Halaman Aset Desa");
+    Route::get('/aset', function () {
+        return view('assets.aset');
+    });
+    
     Route::get('/pembangunan', fn() => "Halaman Pembangunan");
 });
+
+//5. Rute ASET
+Route::get('/aset/{id}/edit', function () {
+    return view('assets.edit');
+});
+Route::get('/aset/create', function () {
+    return view('assets.create');
+});
+
+
