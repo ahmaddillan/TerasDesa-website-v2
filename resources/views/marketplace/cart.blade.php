@@ -1,88 +1,107 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <title>Keranjang</title>
+    <title>Keranjang | TerasDesa</title>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="logo">TerasDesa</div>
-    <input type="text" class="search" placeholder="Cari barang di sini">
-    <div class="profile">Akun</div>
-</header>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">TerasDesa</div>
 
-<!-- CONTENT -->
-<div class="container">
-
-    <!-- LEFT -->
-    <div class="cart-left">
-        <h2>Keranjang</h2>
-
-        <div class="cart-box">
-            <label class="select-all">
-                <input type="checkbox"> Pilih Semua (1)
-            </label>
-
-            <div class="store">
-                <strong>kenzIdstore</strong>
-
-                <div class="product">
-                    <img src="https://via.placeholder.com/80" alt="produk">
-
-                    <div class="product-info">
-                        <p class="title">
-                            Crewneck Polos Halfzip Bahan Fleece Pria Unisex sweater Dewasa
-                        </p>
-                        <small>DENIM, M</small>
-                        <p class="price">Rp52.499</p>
-                    </div>
-
-                    <div class="product-action">
-                        <button class="qty">-</button>
-                        <span>1</span>
-                        <button class="qty">+</button>
-                    </div>
-                </div>
-            </div>
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" placeholder="Cari produk" class="search">
         </div>
 
-        <!-- TIDAK BISA DIPROSES -->
-        <div class="cart-box disabled">
-            <h4>Tidak bisa diproses</h4>
-            <p>Toko libur</p>
+        <div class="account">
+            <span>👤</span> Akun
+        </div>
+    </header>
 
-            <div class="product">
-                <img src="https://via.placeholder.com/80" alt="produk">
-                <div class="product-info">
-                    <p class="title muted">
-                        Pod Vape Mark Zero Pod Bundling Kit
-                    </p>
-                    <p class="price muted">Rp195.000</p>
-                </div>
+    <!-- CONTENT -->
+    <div class="container">
+
+        <!-- CART LIST -->
+        <div class="cart">
+            <h2>Keranjang</h2>
+
+            <div class="select-all">
+                <label>
+                    <input type="checkbox" id="selectAll">
+                    <span>Pilih Semua ({{ count($items) }})</span>
+                </label>
             </div>
+
+            @if(count($items) === 0)
+                <p>Keranjang masih kosong</p>
+            @endif
+
+            @foreach($items as $item)
+                <div class="cart-item" data-id="{{ $item['id'] }}" data-image="{{ $item['image_url'] }}"
+                    data-price="{{ $item['price'] }}">
+
+                    <!-- CHECKBOX -->
+                    <input type="checkbox" class="item-checkbox" data-price="{{ $item['price'] }}" checked>
+
+                    <!-- IMAGE -->
+                    <img src="{{ $item['image_url'] }}" alt="{{ $item['name'] }}" width="90" style="border-radius:8px">
+
+                    <!-- INFO -->
+                    <div class="cart-info">
+                        <div class="store">
+                            {{ $item['name'] }}
+                        </div>
+
+                        @if(!empty($item['description']))
+                            <small style="color:#666;">
+                                {{ $item['description'] }}
+                            </small>
+                        @endif
+
+                        @if(!empty($item['note']))
+                            <div style="font-size:12px;color:#888;margin-top:4px;">
+                                Catatan: {{ $item['note'] }}
+                            </div>
+                        @endif
+                    </div>
+
+                    <!-- QTY -->
+                    <div class="qty">
+                        <button class="btn-minus">-</button>
+                        <span class="qty-value">{{ $item['quantity'] }}</span>
+                        <button class="btn-plus">+</button>
+                    </div>
+
+                    <!-- PRICE -->
+                    <div class="price">
+                        <strong>Rp{{ number_format($item['price']) }}</strong>
+                    </div>
+                </div>
+            @endforeach
         </div>
 
-    </div>
-
-    <!-- RIGHT -->
-    <div class="cart-right">
-        <h3>Ringkasan belanja</h3>
+        <!-- RINGKASAN -->
         <div class="summary">
-            <span>Total</span>
-            <strong>-</strong>
+            <h3>Ringkasan Belanja</h3>
+
+            <p>Total: <strong id="totalPrice">Rp0</strong></p>
+
+            <a href="/checkout" class="btn-buy">
+                Beli
+            </a>
         </div>
 
-        <div class="promo">
-            Pilih barang dulu sebelum pakai promo
-        </div>
 
-        <button class="btn-buy">Beli</button>
     </div>
 
-</div>
-
+    <script src="{{ asset('js/cart.js') }}"></script>
 </body>
+
 </html>

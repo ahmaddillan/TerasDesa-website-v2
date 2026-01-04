@@ -1,39 +1,42 @@
 * {
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
     box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
 }
 
 body {
-    background: #f5f6f8;
+    background: #f5f5f5;
+    margin: 0;
 }
 
 /* HEADER */
 .header {
+    background: #fff;
+    padding: 15px 30px;
     display: flex;
     align-items: center;
-    padding: 15px 30px;
-    background: #fff;
+    gap: 20px;
     border-bottom: 1px solid #ddd;
 }
 
 .logo {
     color: #03ac0e;
+    font-size: 24px;
     font-weight: bold;
-    font-size: 22px;
 }
 
-.search {
-    margin: 0 20px;
+/* WRAPPER SEARCH (TENGAH) */
+.search-wrapper {
     flex: 1;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
 }
 
-.profile {
-    font-size: 14px;
+/* SEARCH DIPERKECIL */
+.search {
+    width: 760px;   /* 👈 tidak terlalu panjang */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 /* CONTENT */
@@ -43,105 +46,72 @@ body {
     padding: 30px;
 }
 
-/* LEFT */
-.cart-left {
-    width: 65%;
-}
-
-.cart-box {
+.cart {
     background: #fff;
+    flex: 3;
     padding: 20px;
-    border-radius: 12px;
-    margin-top: 15px;
+    border-radius: 8px;
 }
 
-.select-all {
-    font-weight: 500;
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-info {
+    flex: 1;
 }
 
 .store {
-    margin-top: 15px;
-}
-
-.product {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.product img {
-    width: 80px;
-    border-radius: 8px;
-}
-
-.product-info {
-    flex: 1;
-    margin-left: 15px;
-}
-
-.title {
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-.price {
     font-weight: bold;
 }
 
-.product-action {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.price {
+    text-align: right;
+}
+
+.price del {
+    color: gray;
+    font-size: 12px;
 }
 
 .qty {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.qty button {
     width: 30px;
     height: 30px;
-    border: 1px solid #ccc;
-    background: #fff;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
-/* DISABLED */
-.disabled {
-    opacity: 0.6;
-}
-
-.muted {
-    color: #888;
-}
-
-/* RIGHT */
-.cart-right {
-    width: 35%;
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    height: fit-content;
-}
-
+/* RINGKASAN */
 .summary {
-    display: flex;
-    justify-content: space-between;
-    margin: 15px 0;
-}
-
-.promo {
-    background: #e6f7f1;
-    padding: 10px;
+    background: #fff;
+    flex: 1;
+    padding: 20px;
     border-radius: 8px;
-    font-size: 14px;
-    margin-bottom: 15px;
+    height: fit-content;
 }
 
 .btn-buy {
     width: 100%;
-    padding: 12px;
     background: #03ac0e;
-    color: white;
+    color: #fff;
     border: none;
-    border-radius: 10px;
+    padding: 12px;
+    margin-top: 20px;
     font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
+    
+}
+
+.btn-buy {
+    display: block;   
+    text-align: center;
 }

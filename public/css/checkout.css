@@ -1,119 +1,98 @@
 * {
     box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f5f6f8;
+    margin: 0;
+    background: #f5f5f5;
 }
 
 /* HEADER */
 .header {
     background: #fff;
-    padding: 15px 30px;
+    padding: 16px 80px;
     border-bottom: 1px solid #ddd;
 }
 
 .logo {
-    color: #2f6f3e;
+    font-size: 24px;
     font-weight: bold;
-    font-size: 22px;
+    color: #03ac0e;
 }
 
-/* LAYOUT */
-.container {
-    display: flex;
-    gap: 20px;
-    padding: 30px;
+/* PAGE */
+.page {
+    padding: 30px 80px;
 }
 
-.left {
-    width: 65%;
+.page-title {
+    margin: 0 0 20px;
 }
 
+/* GRID UTAMA */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 2.3fr 1fr;
+    gap: 24px;
+    align-items: start; /* ⬅️ PALING PENTING */
+}
+
+/* KIRI & KANAN */
+.left,
 .right {
-    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 /* CARD */
 .card {
     background: #fff;
     border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 20px 24px;
 }
 
-h2 {
-    margin-bottom: 20px;
-}
-
-h4 {
+/* PRODUK */
+.store {
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
-/* TEXT */
-.text-muted {
-    color: #777;
-    font-size: 14px;
-}
-
-/* PRODUCT */
 .product {
     display: flex;
     align-items: center;
-    margin-top: 15px;
-}
-
-.product img {
-    width: 80px;
-    border-radius: 8px;
+    gap: 15px;
 }
 
 .product-info {
     flex: 1;
-    margin-left: 15px;
-}
-
-.title {
-    font-weight: 500;
-}
-
-.price {
-    font-weight: bold;
 }
 
 /* SHIPPING */
 .shipping {
-    background: #f7f7f7;
-    padding: 10px;
-    border-radius: 8px;
     margin-top: 15px;
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 8px;
 }
 
-/* INPUT */
+/* FORM */
 textarea {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 12px;
     padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
     resize: none;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
-/* RADIO */
+/* PAYMENT */
 .radio {
-    display: block;
-    margin: 10px 0;
-}
-
-/* PROMO */
-.promo {
-    margin-top: 15px;
-    background: #e6f7f1;
-    padding: 10px;
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 /* RINGKASAN */
@@ -124,26 +103,26 @@ textarea {
 }
 
 .total {
-    font-weight: bold;
+    font-size: 18px;
 }
 
 /* BUTTON */
+.btn-pay {
+    margin-top: 15px;
+    width: 100%;
+    background: #03ac0e;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 .btn-link {
     background: none;
     border: none;
     color: #03ac0e;
     cursor: pointer;
-    margin-top: 5px;
-}
-
-.btn-pay {
-    width: 100%;
-    margin-top: 15px;
-    padding: 12px;
-    background: #03ac0e;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
+    margin-top: 10px;
 }

@@ -38,8 +38,8 @@
 
             <div class="flex items-center gap-3 md:gap-4 text-gray-600">
                 <a href="{{ route('wishlist.index') }}" class="relative p-2 hover:bg-gray-100 rounded-full transition group"><i class="ri-heart-3-line text-2xl group-hover:text-red-500"></i></a>
-                <a href="#" class="relative p-2 hover:bg-gray-100 rounded-full transition group"><i class="ri-shopping-cart-2-line text-2xl group-hover:text-[#7ea953]"></i></a>
-                <a href="#" class="p-2 hover:bg-gray-100 rounded-full transition group"><i class="ri-file-list-3-line text-2xl group-hover:text-[#7ea953]"></i></a>
+                <a href="{{ url('/cart') }}" class="relative p-2 hover:bg-gray-100 rounded-full transition group"><i class="ri-shopping-cart-2-line text-2xl group-hover:text-[#7ea953]"></i></a>
+                <a href="{{ url('/transaksi') }}" class="p-2 hover:bg-gray-100 rounded-full transition group"><i class="ri-file-list-3-line text-2xl group-hover:text-[#7ea953]"></i></a>
                 <div class="h-8 w-px bg-gray-200 mx-1"></div>
                 <div class="flex items-center gap-2 p-1 rounded-lg">
                     <div class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm uppercase border bg-[#f0f7ea] text-teras-green border-teras-green">

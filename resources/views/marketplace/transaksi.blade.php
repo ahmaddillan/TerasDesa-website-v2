@@ -2,98 +2,76 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Transaksi - TerasDesa</title>
+    <title>Transaksi | TerasDesa</title>
     <link rel="stylesheet" href="{{ asset('css/transaksi.css') }}">
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
     <div class="logo">TerasDesa</div>
-    <input type="text" class="search" placeholder="Cari transaksi">
 </header>
 
-<!-- FILTER -->
-<div class="filter-bar">
-    <select>
-        <option>Semua Status</option>
-        <option>Selesai</option>
-        <option>Dikirim</option>
-    </select>
-
-    <select>
-        <option>Semua Produk</option>
-    </select>
-</div>
-
-<!-- INFO -->
-<div class="info-box">
-    <strong>Keterlambatan Pick Up & Pengiriman</strong>
-    <p>
-        Proses pick up & pengiriman berpotensi terlambat sehubungan dengan
-        tingginya antusiasme belanja. Mohon tunggu dan cek berkala status pengirimanmu.
-    </p>
-</div>
-
-<!-- LIST TRANSAKSI -->
 <div class="container">
 
-    <!-- ITEM -->
-    <div class="card">
-        <div class="card-header">
-            <span>Belanja · 10 Des 2025</span>
-            <span class="status">Selesai</span>
-        </div>
+    <h2 class="title">Transaksi</h2>
 
-        <div class="product">
-            <img src="https://via.placeholder.com/60">
-            <div class="info">
-                <strong>Xraypad Jade dot mouse skates</strong>
-                <small>1 barang</small>
-                <p>Total Belanja <strong>Rp119.650</strong></p>
-            </div>
-            <button class="btn">Beli Lagi</button>
-        </div>
+    <!-- FILTER -->
+    <div class="toolbar">
+        <input type="text" placeholder="Cari transaksi">
+        <select><option>Semua Status</option></select>
+        <select><option>Semua Produk</option></select>
+        <select><option>Semua Tanggal</option></select>
     </div>
 
-    <!-- ITEM -->
-    <div class="card">
-        <div class="card-header">
-            <span>Belanja · 8 Des 2025</span>
-            <span class="status">Selesai</span>
-        </div>
-
-        <div class="product">
-            <img src="https://via.placeholder.com/60">
-            <div class="info">
-                <strong>KTT Retro Red 58g POK Linear Switch</strong>
-                <small>70 barang</small>
-                <p>Total Belanja <strong>Rp187.677</strong></p>
-            </div>
-            <button class="btn">Beli Lagi</button>
-        </div>
+    <!-- INFO -->
+    <div class="info">
+        <strong>Keterlambatan Pick Up & Pengiriman</strong>
+        <p>
+            Proses pick up dan pengiriman berpotensi terlambat karena tingginya
+            antusiasme belanja. Silakan cek status pengiriman secara berkala.
+        </p>
     </div>
 
-    <!-- ITEM -->
-    <div class="card">
-        <div class="card-header">
-            <span>Belanja · 8 Okt 2025</span>
-            <span class="status">Selesai</span>
-        </div>
+    @forelse($transaksi as $trx)
+        <div class="transaction-card">
 
-        <div class="product">
-            <img src="https://via.placeholder.com/60">
-            <div class="info">
-                <strong>Rexus Monitor Arm Bracket DBM-02</strong>
-                <small>1 barang</small>
-                <p>Total Belanja <strong>Rp271.100</strong></p>
+            <!-- HEADER -->
+            <div class="transaction-header">
+                <div>
+                    Belanja • {{ \Carbon\Carbon::parse($trx['created_at'])->format('d M Y') }}
+                </div>
+                <div class="status selesai">
+                    {{ strtoupper($trx['status']) }}
+                </div>
             </div>
-            <div class="action">
-                <button class="btn-outline">Ulas</button>
-                <button class="btn">Beli Lagi</button>
+
+            <!-- BODY -->
+            <div class="transaction-body">
+
+                <!-- INFO -->
+                <div class="transaction-info">
+                    <strong>Order #{{ $trx['id'] }}</strong>
+                    <small>Total transaksi</small>
+                </div>
+
+                <!-- TOTAL -->
+                <div class="transaction-total">
+                    <div>Total Belanja</div>
+                    <strong>
+                        Rp{{ number_format((float)$trx['total'], 0, ',', '.') }}
+                    </strong>
+                </div>
+
+                <!-- ACTION -->
+                <div class="transaction-action">
+                    <a href="/cart" class="btn-primary">Beli Lagi</a>
+                </div>
+
             </div>
         </div>
-    </div>
+    @empty
+        <p style="margin-top:20px">Belum ada transaksi</p>
+    @endforelse
 
 </div>
 

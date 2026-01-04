@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController; 
+use App\Http\Controllers\TransaksiController;
 
 // 1. Rute LOGIN & REGISTER
 Route::get('/login', [AuthController::class, 'form']);
@@ -48,17 +50,13 @@ Route::get('/aset/create', function () {
     return view('assets.create');
 });
 
-// 5. Rute CART
-Route::get('/cart', function () {
-    return view('index');
-});
+Route::get('/cart', [CartController::class, 'index']);
+Route::post('/cart/add', [CartController::class, 'add']);
+Route::put('/cart/{id}', [CartController::class, 'update']);
+Route::delete('/cart/{id}', [CartController::class, 'delete']);
 
-// 6. Rute CHECKOUT
-Route::get('/checkout', function () {
-    return view('checkout');
-});
+Route::get('/checkout', [CheckoutController::class, 'index']);
+Route::post('/checkout', [CheckoutController::class, 'process']);
 
-// 7. Rute TRANSAKSI
-Route::get('/transaksi', function () {
-    return view('transaksi');
-});
+Route::get('/transaksi', [TransaksiController::class, 'index']);
+
