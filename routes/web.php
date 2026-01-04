@@ -46,4 +46,8 @@ Route::get('/aset/create', function () {
     return view('assets.create');
 });
 
-
+//6. Rute PROFILE
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
+Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+//7. Rute PEMBANGUNAN
+Route::get('/pembangunan', [App\Http\Controllers\PembangunanController::class, 'index'])->name('pembangunan.index');    
