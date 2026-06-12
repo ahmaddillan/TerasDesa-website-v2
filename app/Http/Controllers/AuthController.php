@@ -19,10 +19,10 @@ class AuthController extends Controller
 
     public function forgotPasswordForm()
     {
-<<<<<<< HEAD
+
         $response = Http::post(env('EXPRESS_API').'/auth/login', [
             'email'    => $request->email,
-=======
+        ]);
         return view('auth.forgot-password');
     }
 
@@ -30,7 +30,6 @@ class AuthController extends Controller
     {
         $response = Http::post(env('EXPRESS_API').'/auth/login', [
             'email' => $request->email,
->>>>>>> f635697606119a99877db0bb52614acdcb1df0e9
             'password' => $request->password,
         ]);
 
