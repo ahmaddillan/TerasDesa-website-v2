@@ -35,7 +35,7 @@
                     <i class="ri-heart-3-fill text-2xl text-red-500"></i>
                 </a>
 
-                <a href="#" class="relative p-2 hover:bg-gray-100 rounded-full transition group">
+                <a href="{{ url('/cart') }}" class="relative p-2 hover:bg-gray-100 rounded-full transition group">
                     <i class="ri-shopping-cart-2-line text-2xl group-hover:text-[#7ea953]"></i>
                 </a>
 
