@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login - TerasDesa</title>
+    <title>Reset Password - TerasDesa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body style="background:#95B67F">
     <div class="container vh-100 d-flex justify-content-center align-items-center">
         <div class="card shadow p-4" style="max-width:380px;width:100%;border-radius:20px;">
-            <h3 class="text-center fw-bold mb-4">Login <span class="text-success">TerasDesa</span></h3>
+            <h3 class="text-center fw-bold mb-4">Reset Password</h3>
 
             @if (session('error'))
                 <div class="alert alert-danger alert-dismissible fade show text-center">{{ session('error') }}
@@ -27,7 +27,7 @@
                 </div>
             @endif
 
-            <form method="POST" action="/login">
+            <form method="POST" action="/forgot-password">
                 @csrf
                 <div class="mb-3">
                     <label class="fw-semibold">Email</label>
@@ -36,16 +36,11 @@
 
                 <div class="mb-3">
                     <label class="fw-semibold">Password</label>
-                    <input type="password" name="password" class="form-control bg-light" required>
+                    <input type="password" name="newPassword" class="form-control bg-light" required>
                 </div>
 
-                <div class="text-end mb-3">
-                    <a href="/forgot-password" class="text-success text-decoration-none fw-semibold">
-                        Lupa Password?
-                    </a>
-                </div>
 
-                <button class="btn w-100 text-white fw-bold" style="background:#6B8E23">Login</button>
+                <button class="btn w-100 text-white fw-bold" style="background:#6B8E23">Submit</button>
             </form>
 
             <div class="text-center mt-3">

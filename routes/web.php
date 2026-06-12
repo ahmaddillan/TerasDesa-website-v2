@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\CheckoutController; 
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\TransaksiController;
 
 // 1. Rute LOGIN & REGISTER
@@ -14,6 +14,8 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'registerForm']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout']);
+Route::get('/forgot-password', [AuthController::class, 'forgotPasswordForm']);
+Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
 
 // 2. Rute WISHLIST
 Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
@@ -37,7 +39,7 @@ Route::middleware('auth.session')->group(function () {
     Route::get('/aset', function () {
         return view('assets.aset');
     });
-    
+
     Route::get('/pembangunan', fn() => "Halaman Pembangunan");
 });
 
