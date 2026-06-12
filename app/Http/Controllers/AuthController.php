@@ -17,12 +17,13 @@ class AuthController extends Controller
 
      public function login(Request $request)
     {
-        $response = Http::post(env('EXPRESS_API').'/auth/login', [
+        $response = Http::post(env('EXPRESS_API').'/api/auth/login', [
             'email'    => $request->email,
             'password' => $request->password,
         ]);
 
-        $res = $response->json();
+       $res = $response->json();
+
 
         if ($res['success'] == true) {
             session([
