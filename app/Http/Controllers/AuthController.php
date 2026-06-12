@@ -7,28 +7,39 @@ use Illuminate\Support\Facades\Http;
 
 class AuthController extends Controller
 {
-    public function form() {
+    public function form()
+    {
         return view('auth.login');
     }
 
-    public function registerForm() {
+    public function registerForm()
+    {
         return view('auth.register');
     }
 
-     public function login(Request $request)
+    public function forgotPasswordForm()
     {
+<<<<<<< HEAD
         $response = Http::post(env('EXPRESS_API').'/auth/login', [
             'email'    => $request->email,
+=======
+        return view('auth.forgot-password');
+    }
+
+    public function login(Request $request)
+    {
+        $response = Http::post(env('EXPRESS_API').'/auth/login', [
+            'email' => $request->email,
+>>>>>>> f635697606119a99877db0bb52614acdcb1df0e9
             'password' => $request->password,
         ]);
 
-       $res = $response->json();
-
+        $res = $response->json();
 
         if ($res['success'] == true) {
             session([
                 'token' => $res['data']['token'],
-                'user_name'  => $res['data']['name'],
+                'user_name' => $res['data']['name'],
             ]);
 
             return redirect('/');
@@ -37,18 +48,41 @@ class AuthController extends Controller
         return back()->with('error', $res['message']);
     }
 
-    public function register(Request $req) {
+    public function register(Request $req)
+    {
         $res = Http::post(env('EXPRESS_API').'/auth/register', $req->all());
         $json = $res->json();
 
-        if (!$json['success']) return back()->withErrors($json['message']);
+        if (! $json['success']) {
+            return back()->withErrors($json['message']);
+        }
 
         return redirect('/login')->with('success', 'Registrasi berhasil! Silakan login.');
     }
 
-    public function logout() {
+    public function forgotPassword(Request $request)
+    {
+        $response = Http::post(
+            env('EXPRESS_API').'/auth/forgot-password',
+            [
+                'email' => $request->email,
+                'newPassword' => $request->newPassword,
+            ]
+        );
+
+        $res = $response->json();
+
+        if ($res['success']) {
+            return redirect('/login')->with('success', 'Password berhasil diubah, silakan login');
+        }
+
+        return back()->with('error', $res['message']);
+    }
+
+    public function logout()
+    {
         session()->flush();
+
         return redirect('/login')->with('success', 'Logout berhasil!');
     }
 }
-
