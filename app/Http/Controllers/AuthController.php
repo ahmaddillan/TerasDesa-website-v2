@@ -17,7 +17,7 @@ class AuthController extends Controller
 
      public function login(Request $request)
     {
-        $response = Http::post(env('EXPRESS_API').'/api/auth/login', [
+        $response = Http::post(env('EXPRESS_API').'/auth/login', [
             'email'    => $request->email,
             'password' => $request->password,
         ]);

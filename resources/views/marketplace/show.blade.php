@@ -24,7 +24,7 @@
                 <a href="/" class="p-2 hover:bg-gray-100 rounded-full transition text-gray-500 hover:text-[#7ea953]">
                     <i class="ri-home-4-line text-2xl"></i>
                 </a>
-                <a href="{{ route('marketplace.index') }}">
+                <a href="{{ url('/') }}">
                     <span class="text-2xl font-bold tracking-tight text-teras-green">TerasDesa</span>
                 </a>
             </div>
