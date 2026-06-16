@@ -6,16 +6,16 @@
 
 body {
     font-family: "Segoe UI", sans-serif;
-    background-color: #99BC85;
+    background-color: #4a6b36;
 }
 
 .navbar {
-    background-color: #556B2F;
-    color: white;
+    background-color: white;
+    color: #4a6b36;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 60px;
+    padding: 10px 80px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -29,7 +29,7 @@ body {
 
 .nav-item {
     text-decoration: none;
-    color: white;
+    color: #4a6b36;
     font-weight: 600;
     padding: 8px 10px;
     transition: 0.3s;
@@ -37,13 +37,13 @@ body {
 
 .nav-item:hover {
     background-color: #fff;
-    color: #4b602a;
+    color: #5da430;
     border-radius: 30px;
 }
 
 .nav-item:active {
     background-color: #fff;
-    color: #4b602a;
+    color: #5da430;
     font-weight: bold;
 }
 
@@ -63,7 +63,7 @@ body {
 
 .judul-container h1{
     font-size: 30px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .search-bar {
@@ -125,7 +125,7 @@ body {
 
 /* button card detail-edit-hapus */
 .card .btn.detail {
-    background-color: #556B2F;
+    background-color: #7cab56;
     color: white;
     padding: 10px 16px;
     border-radius: 10px;
@@ -164,7 +164,7 @@ body {
     justify-content: center;
     padding: 8px 16px;
     margin-left: 10px;
-    background-color: #556B2F;
+    background-color: #7cab56;
     color: #ffffff;
     font-size: 14px;
     font-weight: 600;
@@ -184,18 +184,18 @@ body {
     background-color: #38491f;
 }
 .card-actions .btn.edit {
-    background-color: #d7b22c;
+    background-color: #dfa70e;
     color: #ffffff;
 }
 .card-actions .btn.edit:hover {
     background-color: #89712a;
 }
 .card-actions .btn.hapus {
-    background-color: #d32f2f;
+    background-color: #d33232;
     color: #ffffff;
 }
 .card-actions .btn.hapus:hover {
-    background-color: #a94442;
+    background-color: #9f302e;
 }
 
 /* popup detail aset */
@@ -236,7 +236,7 @@ body {
 #popupClose {
     margin-top: 15px;
     padding: 8px 18px;
-    background-color: #556B2F;
+    background-color: #7cab56;
     color: white;
     border: none;
     border-radius: 10px;
