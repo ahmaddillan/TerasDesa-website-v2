@@ -42,12 +42,18 @@
                 <a href="{{ url('/transaksi') }}" class="p-2 hover:bg-gray-100 rounded-full transition group"><i class="ri-file-list-3-line text-2xl group-hover:text-[#7ea953]"></i></a>
                 <div class="h-8 w-px bg-gray-200 mx-1"></div>
                 <div class="flex items-center gap-2 p-1 rounded-lg">
-                    <div class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm uppercase border bg-[#f0f7ea] text-teras-green border-teras-green">
-                        {{ substr(session('user_name') ?? 'U', 0, 1) }}
-                    </div>
-                    <div class="hidden md:block">
-                        <p class="text-sm font-bold text-gray-700 leading-none">{{ session('user_name') ?? 'Guest User' }}</p>
-                    </div>
+                    <div class="user-area">
+                <a href="{{ url('/profile') }}" class="btn btn-outline-success rounded-pill" style="display: flex; align-items: center; gap: 8px;">
+                    
+                    @if(session()->has('user_photo') && session('user_photo') != null)
+                        <img src="http://localhost:3000/{{ session('user_photo') }}" alt="Foto Profil" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;">
+                    @else
+                        <span>👤</span>
+                    @endif
+
+                    {{ session('user_name', 'Guest') }}
+                </a>
+            </div>
                 </div>
             </div>
         </div>

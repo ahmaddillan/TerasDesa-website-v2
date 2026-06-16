@@ -25,7 +25,16 @@
             </nav>
 
             <div class="user-area">
-                <a href="{{ route('profile') }}" class="btn btn-outline-success rounded-pill">👤 {{ session('user_name', 'Guest') }}</a>
+                <a href="{{ url('/profile') }}" class="btn btn-outline-success rounded-pill" style="display: flex; align-items: center; gap: 8px;">
+                    
+                    @if(session()->has('user_photo') && session('user_photo') != null)
+                        <img src="http://localhost:3000/{{ session('user_photo') }}" alt="Foto Profil" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;">
+                    @else
+                        <span>👤</span>
+                    @endif
+
+                    {{ session('user_name', 'Guest') }}
+                </a>
                 <form action="{{ url('/logout') }}" method="POST" class="logout-form">
                     @csrf
                     <button type="submit" class="btn-logout">Logout</button>
