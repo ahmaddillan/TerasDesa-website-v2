@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f5f5f5;
+}
+
+/* HEADER */
+.header {
+    background: #fff;
+    padding: 16px 80px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #03ac0e;
+}
+
+/* PAGE */
+.page {
+    padding: 30px 80px;
+}
+
+.page-title {
+    margin: 0 0 20px;
+}
+
+/* GRID UTAMA */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 2.3fr 1fr;
+    gap: 24px;
+    align-items: start; /* ⬅️ PALING PENTING */
+}
+
+/* KIRI & KANAN */
+.left,
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+/* PRODUK */
+.store {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-info {
+    flex: 1;
+}
+
+/* SHIPPING */
+.shipping {
+    margin-top: 15px;
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* FORM */
+textarea {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    resize: none;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* PAYMENT */
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* RINGKASAN */
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+.total {
+    font-size: 18px;
+}
+
+/* BUTTON */
+.btn-pay {
+    margin-top: 15px;
+    width: 100%;
+    background: #03ac0e;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #03ac0e;
+    cursor: pointer;
+    margin-top: 10px;
+}

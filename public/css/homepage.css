@@ -1,0 +1,126 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+* { box-sizing: border-box; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.clearfix { clear: both; }
+
+/* HEADER MODERN DENGAN FLEXBOX */
+.header { 
+    background: #ffffff; 
+    padding: 10px 0; 
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Membuat Logo Kiri, Nav Tengah, User Kanan */
+}
+
+.logo { 
+    font-size: 24px; 
+    font-weight: 700; 
+    color: #4a6b36; 
+    flex: 0 0 auto;
+}
+
+.nav {
+    flex: 1; /* Mengambil ruang tengah */
+    display: flex;
+    justify-content: center; /* Memposisikan menu di tengah */
+}
+
+.nav ul { 
+    margin: 0; 
+    padding: 0; 
+    list-style: none; 
+    display: flex;
+}
+
+.nav li { 
+    margin: 0 15px; 
+}
+
+.nav a { 
+    color: #555555; 
+    font-weight: 600; 
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav a.active, .nav a:hover { color: #5da430; }
+
+.user-area { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    flex: 0 0 auto;
+}
+
+.username { font-weight: 600; color: #333; font-size: 14px; }
+
+.btn-logout { 
+    background: #ff4d4d; 
+    border: none; 
+    color: white; 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-logout:hover { background: #e63c3c; }
+
+/* HERO SECTION */
+.bagianAtas { background-color: #4a6b36; color: #ffffff; padding: 100px 0; }
+.bagianAtas-text { float: left; width: 55%; padding-right: 50px; }
+.bagianAtas-text h1 { font-size: 45px; margin-top: 0; line-height: 1.2; }
+.bagianAtas-text p { color: #ffffff; opacity: 0.9; font-size: 18px; line-height: 1.6; }
+.bagianAtas-image { float: left; width: 45%; }
+.bagianAtas-image-box { background: #7cab56; border-radius: 25px; padding: 60px; position: relative; text-align: center; }
+.bagianAtas-image-box .tag { position: absolute; top: 20px; right: 20px; background: #f39c12; color: #ffffff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+.bagianAtas-image-box .icon { font-size: 100px; margin-bottom: 20px; }
+
+/* BUTTONS */
+.btn { display: inline-block; padding: 12px 28px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: 0.3s; }
+.btn-orange { background-color: #f39c12; color: #ffffff; }
+.btn-orange:hover { background-color: #e67e22; transform: translateY(-2px); }
+.btn-white { background-color: #ffffff; color: #333333; }
+.btn-white-outline { border: 2px solid #ffffff; color: #ffffff; }
+.btn-white-outline:hover { background: #ffffff; color: #4a6b36; }
+
+/* FEATURES */
+.features { padding: 80px 0; }
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { color: #4a6b36; font-size: 32px; }
+.feature-column { float: left; width: 33.333%; padding: 0 15px; }
+.feature-box { background: #ffffff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
+.feature-box:hover { transform: translateY(-10px); }
+.feature-box h3 { color: #4a6b36; font-size: 20px; margin: 15px 0; }
+.card-icon { font-size: 50px; }
+.card-link { color: #f39c12; text-decoration: none; font-weight: bold; }
+
+/* STATS */
+.stats { padding: 60px 0; background: #f0f4ee; border-radius: 50px; margin: 0 20px; }
+.stat-item { float: left; width: 25%; text-align: center; }
+.stat-item .number { font-size: 40px; font-weight: 800; color: #4a6b36; }
+
+/* CTA */
+.cta { background-color: #4a6b36; color: #ffffff; padding: 80px 0; text-align: center; }

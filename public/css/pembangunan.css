@@ -1,0 +1,351 @@
+/* CSS Halaman Pembangunan Desa Nagrak - TerasDesa */
+
+.main-content {
+    padding: 60px 0;
+    min-height: calc(100vh - 90px);
+    background-color: #99BC85;
+}
+
+.section-header {
+    margin-bottom: 40px;
+    text-align: center;
+    color: #1a2c11;
+}
+
+.section-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    font-size: 16px;
+    color: #3f582f;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Proyek Cards Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.proyek-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proyek-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.proyek-image-wrapper {
+    position: relative;
+    height: 200px;
+    background: #eaeaea;
+}
+
+.proyek-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.status-direncanakan {
+    background-color: #ff9800;
+}
+
+.status-berjalan {
+    background-color: #2196f3;
+}
+
+.status-selesai {
+    background-color: #4caf50;
+}
+
+.status-ditangguhkan {
+    background-color: #f44336;
+}
+
+.proyek-body {
+    padding: 24px;
+}
+
+.proyek-body h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e2b;
+    margin-bottom: 12px;
+}
+
+.sumber-dana, .anggaran {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 6px;
+}
+
+.sumber-dana strong, .anggaran strong {
+    color: #2c3e2b;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin: 20px 0;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.progress-bar-bg {
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #556B2F;
+    border-radius: 4px;
+}
+
+.proyek-dates {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.btn-detail-proyek {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    background-color: #556B2F;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-detail-proyek:hover {
+    background-color: #38491f;
+}
+
+/* Detail View */
+.back-link {
+    margin-bottom: 25px;
+}
+
+.back-link a {
+    color: #1a2c11;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+.detail-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.detail-image-box {
+    flex: 1;
+    min-width: 300px;
+    background: #eaeaea;
+}
+
+.detail-image-box img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+.detail-info-box {
+    flex: 1.2;
+    padding: 40px;
+    min-width: 320px;
+}
+
+.detail-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.detail-info-box h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e2b;
+    margin-bottom: 24px;
+}
+
+.detail-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.detail-stat-card {
+    flex: 1;
+    background: #f4f7f4;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-stat-card .label {
+    font-size: 12px;
+    color: #777;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.detail-stat-card .value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c3e2b;
+}
+
+.detail-stat-card .value.text-green {
+    color: #38491f;
+}
+
+/* Detail Progress */
+.detail-progress {
+    margin-bottom: 30px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.progress-bar-bg-large {
+    height: 12px;
+    background-color: #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar-large {
+    height: 100%;
+    background-color: #556B2F;
+    border-radius: 6px;
+}
+
+/* Timeline */
+.detail-timeline {
+    border-left: 2px dashed #cbd5e1;
+    padding-left: 20px;
+    margin-left: 10px;
+    margin-bottom: 35px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item .dot {
+    position: absolute;
+    left: -27px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+}
+
+.timeline-item .dot.green {
+    background-color: #4caf50;
+}
+
+.timeline-item .dot.orange {
+    background-color: #ff9800;
+}
+
+.timeline-content strong {
+    font-size: 13px;
+    color: #777;
+    display: block;
+}
+
+.timeline-content p {
+    font-size: 15px;
+    color: #2c3e2b;
+    font-weight: 600;
+}
+
+/* Description */
+.detail-description h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e2b;
+    margin-bottom: 12px;
+}
+
+.detail-description p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.no-data {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    font-size: 16px;
+    color: #555;
+}
