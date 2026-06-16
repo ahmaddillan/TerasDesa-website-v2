@@ -25,7 +25,7 @@
             </nav>
 
             <div class="user-area">
-                <span class="username">👤 {{ session('user_name', 'Guest') }}</span>
+                <a href="{{ route('profile') }}" class="btn btn-outline-success rounded-pill">👤 {{ session('user_name', 'Guest') }}</a>
                 <form action="{{ url('/logout') }}" method="POST" class="logout-form">
                     @csrf
                     <button type="submit" class="btn-logout">Logout</button>

@@ -35,6 +35,7 @@ class AuthController extends Controller
             session([
                 'token' => $res['data']['token'],
                 'user_name' => $res['data']['name'],
+                'user_photo' => $res['data']['photo'],
             ]);
 
             return redirect('/');

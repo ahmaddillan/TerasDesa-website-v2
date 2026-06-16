@@ -7,6 +7,7 @@ use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\ProfileController;
 
 // 1. Rute LOGIN & REGISTER
 Route::get('/login', [AuthController::class, 'form']);
@@ -41,6 +42,12 @@ Route::middleware('auth.session')->group(function () {
     });
 
     Route::get('/pembangunan', fn() => "Halaman Pembangunan");
+
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
+    Route::post('/profile/photo', [ProfileController::class, 'updatePhoto'])->name('profile.photo');
 });
 
 
