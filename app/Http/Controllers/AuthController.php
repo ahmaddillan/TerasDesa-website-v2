@@ -19,16 +19,12 @@ class AuthController extends Controller
 
     public function forgotPasswordForm()
     {
-
-        $response = Http::post(env('EXPRESS_API').'/auth/login', [
-            'email'    => $request->email,
-        ]);
         return view('auth.forgot-password');
     }
 
     public function login(Request $request)
     {
-        $response = Http::post(env('EXPRESS_API').'/auth/login', [
+        $response = Http::post(env('EXPRESS_API').'/api/auth/login', [
             'email' => $request->email,
             'password' => $request->password,
         ]);
@@ -49,7 +45,7 @@ class AuthController extends Controller
 
     public function register(Request $req)
     {
-        $res = Http::post(env('EXPRESS_API').'/auth/register', $req->all());
+        $res = Http::post(env('EXPRESS_API').'/api/auth/register', $req->all());
         $json = $res->json();
 
         if (! $json['success']) {
@@ -62,7 +58,7 @@ class AuthController extends Controller
     public function forgotPassword(Request $request)
     {
         $response = Http::post(
-            env('EXPRESS_API').'/auth/forgot-password',
+            env('EXPRESS_API').'/api/auth/forgot-password',
             [
                 'email' => $request->email,
                 'newPassword' => $request->newPassword,
