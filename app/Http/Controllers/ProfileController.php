@@ -109,8 +109,27 @@ class ProfileController extends Controller
 
 
         $res = $response->json();
+        
+        // 1. CEK APAKAH RESPONS NULL (BUKAN JSON)
+        if (is_null($res)) {
+            
+            
+            return back()->with('error', 'Terjadi kesalahan pada server API. Respons tidak valid.');
+        }
 
+        // 2. CEK STATUS SUCCESS
+        if (!isset($res['success']) || !$res['success']) {
+            return back()->with('error', $res['message'] ?? 'Gagal mengupdate foto profile');
+        }
 
+        if (isset($res['data']['photo'])) {
+            session(['user_photo' => $res['data']['photo']]);
+        }
+        
+
+        return back()->with('success', 'Foto profile berhasil diupdate');
+        
+        
         if (!$res['success']) {
 
             return back()
