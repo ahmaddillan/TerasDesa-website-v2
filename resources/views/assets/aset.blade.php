@@ -19,7 +19,7 @@
 </div>
 
 <div class="judul-container">
-  <h1>Data Aset Desa</h1>
+  <h1>Aset Desa</h1>
 
   <div class="d-flex gap-2 align-items-center">
     <input
